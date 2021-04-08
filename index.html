@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+ 
+    <title>Telco Users Classification</title>
+  </head>
+  <body>
+    <center>
+    <h1>TELCO USERS CLASSIFICATION</h1>
+    <h2>Enter your inputs for classification</h2>
+    <div class="container text-center">
+ 
+    <form action="{{url_for('predict')}}" method="POST">
+ 
+        <label for="Customer ID">Customer ID:</label>
+        <input type="text" id="Customer ID" name="CID" value=""><br>
+        <label for="Gender">Gender:</label>
+        <input type="text" id="Gender" name="Gen" value=""><br>
+        <label for="Senior Citizen">Senior Citizen:</label>
+        <input type="text" id="Senior Citizen" name="Sc" value=""><br>
+        <label for="Partner">Partner:</label>
+        <input type="text" id="Partner" name="Par" value=""><br>
+        <label for="Dependents">Dependents:</label>
+        <input type="text" id="Dependents" name="Dep" value=""><br>
+        <label for="Tenure">Tenure:</label>
+        <input type="text" id="Tenure" name="Ten" value=""><br>
+        <label for="Phone Service">Phone Service:</label>
+        <input type="text" id="Phone Service" name="PhnS" value=""><br>
+        <label for="Multiple Lines">Multiple Lines:</label>
+        <input type="text" id="Multiple Lines" name="MpL" value=""><br>
+        <label for="Internet Services">Internet Services:</label>
+        <input type="text" id="Internet Services" name="InS" value=""><br>
+        <label for="Online Security">Online Security:</label>
+        <input type="text" id="Online Security" name="OnS" value=""><br>
+        <label for="Online Backup">Online Backup:</label>
+        <input type="text" id="Online Backup" name="OnB" value=""><br>
+        <label for="Device Protection">Device Protection:</label>
+        <input type="text" id="Device Protection" name="DevP" value=""><br>
+        <label for="Tech Support">Tech Support:</label>
+        <input type="text" id="Tech Support" name="TecS" value=""><br>
+        <label for="Streaming TV">Streaming TV:</label>
+        <input type="text" id="Streaming TV" name="Stv" value=""><br>
+        <label for="Streaming Movies">Streaming Movies:</label>
+        <input type="text" id="Streaming Movies" name="Stm" value=""><br>
+        <label for="Contract">Contract:</label>
+        <input type="text" id="Contract" name="Con" value=""><br>
+        <label for="Paperless Billing">Paperless Billing:</label>
+        <input type="text" id="Paperless Billing" name="Pb" value=""><br>
+        <label for="Monthly Charges">Monthly Charges:</label>
+        <input type="text" id="Monthly Charges" name="MC" value=""><br>
+
+  <button class='btn btn-success'>Predict</button>
+ 
+    </form>
+ 
+    <br>
+    <br>
+    {{ prediction_text }}
+ 
+</div>
+ 
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    </center>  
+</body>
+</html>
