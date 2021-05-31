@@ -9,8 +9,6 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
  
- 
- 
 @app.route('/predict',methods=['POST'])
 def predict():
  
@@ -18,6 +16,7 @@ def predict():
  
         CID = request.form['CID']
         Gen = request.form['Gen']
+        
         Sc = request.form['Sc']
         Par = request.form['Par']
         Dep = request.form['Dep']
@@ -36,12 +35,17 @@ def predict():
         MC = request.form['MC']
         data =[[int(CID),int(Gen),int(Sc),int(Par),int(Dep),int(Ten),int(PhnS),int(MpL),int(InS),int(OnS),int(OnB),int(DevP),int(TecS),int(Stv),int(Stm),int(Con),int(Pb),int(MC)]]
  
+ 
         lr_model = pickle.load(open('telco.pkl', 'rb'))
         prediction = lr_model.predict(data)[0]
+        
+        if(prediction==1):
+              a='Yes'
+        else:
+              a='No'
+    return render_template('prediction.html', prediction_text='Probability that the customer continues with the company is : {}'.format(a))
  
-    return render_template('index.html', prediction_text='Probability that the customer continues with the company is :{}'.format(prediction))
- 
- 
+
  
 if __name__ == '__main__':
     app.run(debug=True)
